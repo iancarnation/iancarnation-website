@@ -1,6 +1,8 @@
 ---
 title: Turn, Turn, Turn - Life of a Maya Script, Part 1
 date: "2018-03-16"
+published: true
+isProject: false
 ---
 
 My colleague at work had a folder full of models that needed to be rotated to face in the Z-positive direction, to match Unity's orientation. He asked me if there was a way to get that done without having to open up every file and do it manually. My eyes lit up and I was like, "Ooh, ooh, let me script that for you!" I had just begun working through [Practical Maya Programming][] by [Rob Galanakis][] and was thrilled that a real-world case study just fell into my lap.
