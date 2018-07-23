@@ -12,7 +12,7 @@ export default ({data}) => {
 };
 
 export const query = graphql`
-  query ProjectQuery($slug: String!) {
+  query ProjectTemplateQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

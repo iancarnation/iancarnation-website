@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography";
 export default ({data}) => (
     <div>
         <g.H1>
-            Articles
+            Projects
         </g.H1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
@@ -26,9 +26,9 @@ export default ({data}) => (
 );
 
 export const query = graphql`
-    query ArticleQuery {
+    query ProjectQuery {
         allMarkdownRemark(sort: {fields: [frontmatter___date], order:DESC},
-            filter: {frontmatter: {isProject: {eq: false},published: {eq: true}}}) {
+            filter: {frontmatter: {isProject: {eq: true},published: {eq: true}}}) {
             totalCount
             edges {
               node {

@@ -43,7 +43,7 @@ export default ({ data }) => {
               </Link>
           </div>
       ))}
-        <p><Link to={'/work/'}>
+        <p><Link to={'/projects/'}>
               See More Work
             </Link>
         </p>
@@ -74,6 +74,10 @@ export default ({ data }) => {
               </Link>
           </div>
       ))}
+      <p><Link to={'/articles/'}>
+              All Articles
+            </Link>
+        </p>
       </div>
     </div>
   );
