@@ -37,7 +37,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
           `
         ).then(result=> {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-                console.log("\n", node.frontmatter.isProject);
                 createPage({
                   path: node.fields.slug,
                   component: (node.frontmatter.isProject) ? projectTemplate : articleTemplate,

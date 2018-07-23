@@ -6,6 +6,12 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   console.log(data);
+
+  const articles = data.allMarkdownRemark.edges.filter(({node}) => 
+                      (node.frontmatter.published && !node.frontmatter.isProject));
+  const projects = data.allMarkdownRemark.edges.filter(({node}) => 
+                      (node.frontmatter.published && node.frontmatter.isProject));                    
+  console.log(articles);
   return (
     <div>
       <div>
@@ -24,6 +30,19 @@ export default ({ data }) => {
         <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
           Featured Work
         </g.H1>
+        {projects.map(({ node }) => (
+          <div key={node.id}>
+              <Link
+                  to={node.fields.slug}
+                  css={{textDecoration:'none', color:'inherit'}}
+              >
+                  <g.H3 marginBottom={rhythm(1 / 4)}>
+                      {node.frontmatter.title}{" "}
+                  </g.H3>
+                  <p>{node.excerpt}</p>
+              </Link>
+          </div>
+      ))}
         <p><Link to={'/work/'}>
               See More Work
             </Link>
@@ -42,8 +61,7 @@ export default ({ data }) => {
         <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
           Articles
         </g.H1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {articles.map(({ node }) => (
           <div key={node.id}>
               <Link
                   to={node.fields.slug}
@@ -71,6 +89,8 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            published
+            isProject
           }
           fields {
               slug
