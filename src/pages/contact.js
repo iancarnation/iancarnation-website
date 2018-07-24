@@ -3,10 +3,10 @@ import React from "react";
 export default ({data}) => (
     <div>
         <h1>
-            Contact
+            Contact 
         </h1>
         <p>
-            Hello! You can reach me via email at contact[at]iancarnation.com
+            Shoot me one-a them eee-mails: <b>summon[at]iancarnation.com</b>
         </p>
   </div>
 );

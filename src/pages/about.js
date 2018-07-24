@@ -6,9 +6,9 @@ export default ({data}) => (
             About {data.site.siteMetadata.title}
         </h1>
         <p>
-        We're the only site running on your computer dedicated to showing the best
-        photos and videos of pandas eating lots of food.
+            <em>Intrepid Technician | Insatiable Learner | Intriguing Artist | Infinite Smiles-Provider</em>
         </p>
+        Hello, I'm an educator and technical artist excited to support your creative and computational needs!
   </div>
 );
 
