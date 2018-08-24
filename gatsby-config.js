@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Ian Erba',
+        title: 'Ian Rich',
     },
     plugins: [
         {
@@ -10,7 +10,21 @@ module.exports = {
                 path:`${__dirname}/src/`,
             },
         },
-        'gatsby-transformer-remark',
+        {
+            resolve:'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    {
+                        resolve: "gatsby-remark-embed-video",
+                        options: {
+                            width: 640,
+                            related: false,
+                            noIframeBorder: true
+                        }
+                    }
+                ]
+            }
+        },
         'gatsby-plugin-glamor',
         {
             resolve: 'gatsby-plugin-typography',

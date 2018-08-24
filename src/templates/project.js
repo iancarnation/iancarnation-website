@@ -5,7 +5,6 @@ export default ({data}) => {
     return (
         <div>
             <h1>{post.frontmatter.title}</h1>
-            I'm a Projeccftttttttt!!!!!!!
             <div dangerouslySetInnerHTML={{__html: post.html}}/>
         </div>
     );
