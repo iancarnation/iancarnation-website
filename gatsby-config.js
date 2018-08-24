@@ -3,6 +3,8 @@ module.exports = {
         title: 'Ian Rich',
     },
     plugins: [
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve:'gatsby-source-filesystem',
             options:{
@@ -14,6 +16,13 @@ module.exports = {
             resolve:'gatsby-transformer-remark',
             options: {
                 plugins: [
+                    `gatsby-remark-copy-linked-files`,
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 1080,
+                        },
+                    },
                     {
                         resolve: "gatsby-remark-embed-video",
                         options: {
@@ -21,7 +30,7 @@ module.exports = {
                             related: false,
                             noIframeBorder: true
                         }
-                    }
+                    },
                 ]
             }
         },
@@ -31,6 +40,6 @@ module.exports = {
             options: {
                 pathToConfigModule: 'src/utils/typography',
             },
-        },
+        },     
     ],
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import g from "glamorous";
 import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 import { rhythm } from "../utils/typography";
 
@@ -32,6 +33,7 @@ export default ({ data }) => {
         </g.H1>
         {projects.map(({ node }) => (
           <div key={node.id}>
+          
               <Link
                   to={node.fields.slug}
                   css={{textDecoration:'none', color:'inherit'}}
@@ -39,6 +41,9 @@ export default ({ data }) => {
                   <g.H3 marginBottom={rhythm(1 / 4)}>
                       {node.frontmatter.title}{" "}
                   </g.H3>
+                  {node.frontmatter.cover_image != null &&
+                    <Img sizes={node.frontmatter.cover_image.childImageSharp.sizes} />
+                  }
                   <p>{node.excerpt}</p>
               </Link>
           </div>
@@ -95,6 +100,14 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             published
             isProject
+            cover_image{
+              publicURL
+              childImageSharp{
+                sizes(maxWidth: 100){
+                  srcSet
+                }
+              }
+            }
           }
           fields {
               slug
