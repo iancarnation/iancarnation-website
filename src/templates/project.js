@@ -3,7 +3,6 @@ import Img from "gatsby-image";
 
 export default ({data}) => {
     const post = data.markdownRemark;
-    console.log(post.frontmatter.cover_image);
     return (
         <div>
             <h1>{post.frontmatter.title}</h1>
