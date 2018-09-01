@@ -65,15 +65,6 @@ export const query = graphql`
                 title
             }
         }
-        file(relativePath: {regex: "/maze_full_extra_tall.jpg/" }) {
-            childImageSharp {
-              # Specify the image processing specifications right in the query.
-              # Makes it trivial to update as your page's design changes.
-              sizes(maxWidth: 1920) {
-                ...GatsbyImageSharpSizes
-              }
-            }
-          }
     }
 `
 /*<Link className={linkStyle} to={'/about/'}>
