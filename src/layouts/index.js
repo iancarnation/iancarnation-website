@@ -2,11 +2,17 @@ import React from "react";
 import g from "glamorous";
 import {css} from "glamor";
 import Link from "gatsby-link";
-import Img from "gatsby-image";
+//import Img from "gatsby-image";
 
 import {rhythm} from "../utils/typography";
 
+import './index.css'
+
 const linkStyle = css({float: 'right'});
+
+const mainDiv = g.div({
+    
+})
 
 const TopLink = props =>
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -20,14 +26,15 @@ export default ({children, data}) => (
         display={'flex'}
         flexDirection={'column'}
     >
-        <Img
+        {/*<Img
             css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
-            style={{ position: `absolute` }}
-            resolutions={data.file.childImageSharp.resolutions}
-        />
+            style={{ position: `absolute`}}
+            sizes={data.file.childImageSharp.sizes}
+        />*/}
         <g.Div
+            background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
             margin={'0 auto'}
-            maxWidth={700}
+            maxWidth={700}  
             padding={rhythm(2)}
             paddingTop={rhythm(1.5)}
         >
@@ -58,12 +65,12 @@ export const query = graphql`
                 title
             }
         }
-        file(relativePath: {regex: "/maze_full_smaller/" }) {
+        file(relativePath: {regex: "/maze_full_extra_tall.jpg/" }) {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
-              resolutions(width: 1920) {
-                ...GatsbyImageSharpResolutions
+              sizes(maxWidth: 1920) {
+                ...GatsbyImageSharpSizes
               }
             }
           }

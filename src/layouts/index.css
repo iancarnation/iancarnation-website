@@ -1,0 +1,5 @@
+body {
+    background-image: url("./maze_main_slice.jpg"), url("./maze_main_slice.jpg");
+    background-repeat: repeat-y;
+    background-position: left, right;   
+}
