@@ -27,17 +27,17 @@ export default ({children, data}) => (
         flexDirection={'column'}
     >
         <g.Div
-        background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
+            background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
             margin={'0 auto'}
-            //maxWidth={750}
-            left={-50}
+            overflow={'auto'}
+            maxWidth={800}
         >
         
         <g.Div
-            margin={'0 auto'}
-            maxWidth={700}
-            left={-50}
-            padding={rhythm(2)}
+           // margin={'0 auto'}
+            maxWidth={800}
+            //left={-50}
+            padding={rhythm(3)}
             paddingTop={rhythm(1.5)}
             height={'100%'}
         >
