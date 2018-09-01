@@ -26,17 +26,20 @@ export default ({children, data}) => (
         display={'flex'}
         flexDirection={'column'}
     >
-        {/*<Img
-            css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
-            style={{ position: `absolute`}}
-            sizes={data.file.childImageSharp.sizes}
-        />*/}
         <g.Div
-            background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
+        background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
             margin={'0 auto'}
-            maxWidth={700}  
+            //maxWidth={750}
+            left={-50}
+        >
+        
+        <g.Div
+            margin={'0 auto'}
+            maxWidth={700}
+            left={-50}
             padding={rhythm(2)}
             paddingTop={rhythm(1.5)}
+            height={'100%'}
         >
             <Link to={'/'}>
                 <g.H3
@@ -55,7 +58,11 @@ export default ({children, data}) => (
                 <TopLink to="/contact/">Contact</TopLink>
             </ul>
             {children()}
+            
         </g.Div>
+        
+        </g.Div>
+        
     </g.Div>
 );
 export const query = graphql`
