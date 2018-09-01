@@ -2,6 +2,7 @@ import React from "react";
 import g from "glamorous";
 import {css} from "glamor";
 import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 import {rhythm} from "../utils/typography";
 
@@ -19,6 +20,11 @@ export default ({children, data}) => (
         display={'flex'}
         flexDirection={'column'}
     >
+        <Img
+            css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
+            style={{ position: `absolute` }}
+            resolutions={data.file.childImageSharp.resolutions}
+        />
         <g.Div
             margin={'0 auto'}
             maxWidth={700}
@@ -52,6 +58,15 @@ export const query = graphql`
                 title
             }
         }
+        file(relativePath: {regex: "/maze_full_smaller/" }) {
+            childImageSharp {
+              # Specify the image processing specifications right in the query.
+              # Makes it trivial to update as your page's design changes.
+              resolutions(width: 1920) {
+                ...GatsbyImageSharpResolutions
+              }
+            }
+          }
     }
 `
 /*<Link className={linkStyle} to={'/about/'}>

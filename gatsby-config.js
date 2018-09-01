@@ -12,6 +12,13 @@ module.exports = {
                 path:`${__dirname}/src/`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `img`,
+              path: `${__dirname}/src/img/`
+            }
+        },
         `gatsby-plugin-catch-links`,
         {
             resolve:'gatsby-transformer-remark',
