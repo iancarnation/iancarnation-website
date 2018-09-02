@@ -7,6 +7,7 @@ import Link from "gatsby-link";
 import {rhythm} from "../utils/typography";
 
 import './index.css'
+require("prismjs/themes/prism.css");
 
 const linkStyle = css({float: 'right'});
 

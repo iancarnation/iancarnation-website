@@ -22,7 +22,7 @@ I began by inspecting one of the FBX files in Maya to see how the models were se
 Finally, the rotation could happen: `root.setRotation([0.0,180.0,0.0], space='world')`. Then, to make sure I was being Mr. Clean, I wanted to 'Freeze Transformations' on this model so it'd be spic-n-span upon import into the engine. To discover this command I used the classic method of performing it in the Maya GUI and looking at the script window to see what MEL command was executed. I saw 'makeIdentity', so I looked up the corresponding PyMEL syntax, thus: `pmc.makeIdentity(apply=True)`. Makes sense, because an 'Identity Matrix' would be zero rotation and translation with a scale of one - nice and 'frozen!'
 
 So here is the code for the full operation:
-```
+```python
     meshes = pmc.ls(type='mesh')
     
     transforms = [m.getParent() for m in meshes]
@@ -37,7 +37,7 @@ So here is the code for the full operation:
 
 Then it was a matter of doing this on multiple files...
 To be continued in:
-### Small (or Large) Batch Artisinal File Processing - Life of a Maya Script, Part 2
+### Life's a Batch: Small Batch Artisinal File Processing - Life of a Maya Script, Part 2
 
 P.S. Earlier I said it was, "just a matter of finding the relevant PyMEL functions.." which was not as straightforward as it sounds. Maybe I'll write about that special slice of the process later :)
 
