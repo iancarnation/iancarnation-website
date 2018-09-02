@@ -33,7 +33,6 @@ export default ({ data }) => {
         </g.H1>
         {projects.map(({ node }) => (
           <div key={node.id}>
-          
               <Link
                   to={node.fields.slug}
                   css={{textDecoration:'none', color:'inherit'}}
@@ -41,11 +40,11 @@ export default ({ data }) => {
                   <g.H3 marginBottom={rhythm(1 / 4)}>
                       {node.frontmatter.title}{" "}
                   </g.H3>
-                  {node.frontmatter.cover_image != null &&
+                  {/*{node.frontmatter.cover_image != null &&
                     <Img sizes={node.frontmatter.cover_image.childImageSharp.sizes} />
-                  }
+                  }*/}
                   <p>{node.excerpt}</p>
-              </Link>
+              </Link> 
           </div>
       ))}
         <p><Link to={'/projects/'}>
@@ -104,7 +103,7 @@ export const query = graphql`
               publicURL
               childImageSharp{
                 sizes(maxWidth: 100){
-                  srcSet
+                  ...GatsbyImageSharpSizes
                 }
               }
             }

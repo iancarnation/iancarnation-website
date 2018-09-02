@@ -5,8 +5,8 @@ export default ({data}) => (
         <h1>
             About {data.site.siteMetadata.title}
         </h1>
-        <p>
-            <em>Intrepid Technician | Insatiable Learner | Intriguing Artist | Infinite Smiles-Provider</em>
+        <p style={{ 'font-size': `small` }}>
+            <em>Intrepid Technician  .  Insatiable Learner  .  Intriguing Artist  .  Infinite Smiles-Provider</em>
         </p>
         Hello, I'm an educator and technical artist excited to support your creative and computational needs!
   </div>

@@ -29,7 +29,7 @@ export default ({children, data}) => (
         <g.Div
             background={ 'linear-gradient(90deg,rgba(255,255,255,0) 0%, #ffffff 10%, #ffffff 50%, #ffffff 90%, rgba(255,255,255,0) 100%)'}
             margin={'0 auto'}
-            overflow={'auto'}
+            //overflow={'auto'}
             maxWidth={800}
         >
         
@@ -60,9 +60,7 @@ export default ({children, data}) => (
             {children()}
             
         </g.Div>
-        
         </g.Div>
-        
     </g.Div>
 );
 export const query = graphql`

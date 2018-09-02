@@ -3,7 +3,7 @@ title: "Vextar"
 date: "2017-08-10"
 published: true
 isProject: true
-cover_image:  "./dbz_drawing_theguys.jpg"
+cover_image:  "./vextar_cover.jpg"
 ---
 *Deadly disc  battles between cyborg clones in space over a black hole in the year 3020, the strange sport of the distant future!*
 
