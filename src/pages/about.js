@@ -15,6 +15,12 @@ export default ({data}) => (
             <br></br>
             <a href={resume}>View Resume</a>
         </p>
+        <p>
+            <a href="https://www.linkedin.com/in/iancarlrich/">LinkedIn Profile</a>
+        </p>
+        <p>
+            View my codeses on <a href="https://gitlab.com/iancarnation">GitLab</a>(Recent) or <a href="https://github.com/iancarnation/">GitHub</a>(Everything)
+        </p>
     </div>
     
 

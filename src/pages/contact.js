@@ -8,6 +8,12 @@ export default ({data}) => (
         <p>
             Shoot me one-a them eee-mails: <b>summon[at]iancarnation.com</b>
         </p>
+        <p>
+            <a href="https://www.linkedin.com/in/iancarlrich/">LinkedIn Profile</a>
+        </p>
+        <p>
+            View my codeses on <a href="https://gitlab.com/iancarnation">GitLab</a>(Recent) or <a href="https://github.com/iancarnation/">GitHub</a>(Everything)
+        </p>
   </div>
 );
 
