@@ -10,11 +10,11 @@ isProject: false
 
 This was my first go at retopologizing a sculpt from ZBrush using Maya and the Quad Draw tool. I had a student diving into ZBrush who wanted to get her blobby character models into her team's WebVR game, so I quickly whipped together my own little character in a similar style to what my student was going for - with spherical base shapes and antennae/sticky-outy things. The goal being to practice the retopologizing workflow, no more than a few minutes were spent on the Zbrush sculpt. I do love the little guy, though - Hello whoaFish!
 
-[!][initialOBJ]
+![whoaFish initial](./whoaFish_initialOBJ.png)
 
 Looking at the imported OBJ file of the sculpt, we're clocking in at about 50k vertices, certainly too heavy for Mr. Whoa. To aid in performance while retopoing, I followed the advice from [tutorial] and made a GPU cache of the geometry, which provides an Alembic file you can import into the scene. The GPU Cache node that results can be used with the Make Live and Quad Draw tools, with which all retopo goodness is possible. With the GPU Cache, Maya does not have to evaluate it through its dependency graph like a normal node. Instead, it routes the data directly to the graphics card. Neat!
 
-[!][polycount]
+![whoaFish polycount](./whoaFish_polycount.png)
 
 All you need to do is execute **Cache->GPU Cache->Export**(All/Selection) to save your cache file. Then you do **Cache->GPU Cache->Import** to use it in your scene. The original geometry can be discarded (or just make a fresh scene for the import). It's a good idea to put the cache object in its own layer, so you can hide it and view your new geometry solo later on. 
 
@@ -24,11 +24,7 @@ Fun and meditative times were had with this workflow - it's a fun puzzle to craw
 
 
 #### Helpful Things
-[ZBrush to Maya to ZBrush - Retopology and UVing with Quad Draw - Alex Cheparev](https://youtu.be/I7YqK-E1l6c)
-
-[Quad Draw Retopo Demo - pointpusher](https://vimeo.com/153745412)
-
-[Quad Draw / Make Live Workflow - My Oh Maya](https://www.youtube.com/watch?v=edegRylKdzI)
-
-
-[retopo cache node] (https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/GUID-6121F248-5E15-4E42-AFC5-427CBCF540B3-htm.html)
+[ZBrush to Maya to ZBrush - Retopology and UVing with Quad Draw - Alex Cheparev](https://youtu.be/I7YqK-E1l6c)   
+[Quad Draw Retopo Demo - pointpusher](https://vimeo.com/153745412)   
+[Quad Draw / Make Live Workflow - My Oh Maya](https://www.youtube.com/watch?v=edegRylKdzI)   
+[Retopologize GPU Cache Node - Maya Docs](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/Maya/files/GUID-6121F248-5E15-4E42-AFC5-427CBCF540B3-htm.html)   
